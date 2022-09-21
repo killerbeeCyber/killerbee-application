@@ -1,39 +1,39 @@
 version: '3.9'
 
 services:
-  react-app-client:
+  react-app-prod:
     hostname: react-app-prod
     build: ./react/app-prod
     restart: always
     depends_on:
       - api-gateway
     volumes:
-      - ./react/app-client/src:/app/src
-      - ./react/app-client/img:/app/img
+      - ./react/app-prod/src:/app/src
+      - ./react/app-prod/img:/app/img
     ports:
       - "8080:8080"
 
-  react-app-delivery:
+  react-app-rd:
     hostname: react-app-rd
     build: ./react/app-rd
     restart: always
     depends_on:
       - api-gateway
     volumes:
-      - ./react/app-delivery/src:/app/src
-      - ./react/app-delivery/img:/app/img
+      - ./react/app-rd/src:/app/src
+      - ./react/app-rd/img:/app/img
     ports:
       - "8081:8081"
 
-  react-app-management:
+  react-app-test:
     hostname: react-app-test
     build: ./react/app-test
     restart: always
     depends_on:
       - api-gateway
     volumes:
-      - ./react/app-management/src:/app/src
-      - ./react/app-management/img:/app/img
+      - ./react/app-test/src:/app/src
+      - ./react/app-test/img:/app/img
     ports:
       - "8082:8082"
 
