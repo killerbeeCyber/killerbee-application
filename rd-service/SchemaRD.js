@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const bddConnect = require('./bdd')
-bddConnect('electiveProject')
+bddConnect('Killerbee')
 
 const freezbeeSchema = new mongoose.Schema({
     nom : [String],
