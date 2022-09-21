@@ -1,0 +1,83 @@
+version: '3.9'
+
+services:
+  react-app-client:
+    hostname: react-app-prod
+    build: ./react/app-prod
+    restart: always
+    depends_on:
+      - api-gateway
+    volumes:
+      - ./react/app-client/src:/app/src
+      - ./react/app-client/img:/app/img
+    ports:
+      - "8080:8080"
+
+  react-app-delivery:
+    hostname: react-app-rd
+    build: ./react/app-rd
+    restart: always
+    depends_on:
+      - api-gateway
+    volumes:
+      - ./react/app-delivery/src:/app/src
+      - ./react/app-delivery/img:/app/img
+    ports:
+      - "8081:8081"
+
+  react-app-management:
+    hostname: react-app-test
+    build: ./react/app-test
+    restart: always
+    depends_on:
+      - api-gateway
+    volumes:
+      - ./react/app-management/src:/app/src
+      - ./react/app-management/img:/app/img
+    ports:
+      - "8082:8082"
+
+  api-gateway:
+    hostname: api-gateway
+    image: kong:alpine
+    restart: always
+    depends_on:
+      - prod-service
+      - rd-service
+      - test-service
+    environment:
+      - KONG_DATABASE=off
+      - KONG_DECLARATIVE_CONFIG=/etc/kong/kong.yml
+    volumes:
+      - ./kong.yml:/etc/kong/kong.yml
+    ports:
+      - "8000:8000"
+
+  prod-service:
+    hostname: prod-service
+    build: ./prod-service
+    restart: always
+    depends_on:
+      - mongodb
+
+  rd-service:
+    hostname: rd-service
+    build: ./rd-service
+    depends_on:
+      - mongodb
+
+  test-service:
+    hostname: test-service
+    build: ./test-service
+    depends_on:
+      - mongodb
+
+  mongodb:
+    hostname: mongodb
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
