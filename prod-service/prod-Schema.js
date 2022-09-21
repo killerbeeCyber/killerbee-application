@@ -3,26 +3,26 @@ const bddConnect = require('./bdd')
 bddConnect('Killerbee')
 
 const freezbeeSchema = new mongoose.Schema({
-    nom : [String],
-    description : [String],
-    pUHT : [String],
+    nom : String,
+    description : String,
+    pUHT : String,
     gamme : Number,
     ingredient : Array,
     grammage : Array,
 })
 
 const ingredientSchema = new mongoose.Schema({
-    nom : [String],
-    description : [String]
+    nom : String,
+    description : String
 })
 
 const procedeSchema = new mongoose.Schema({
-    nom : [String],
-    description : [String],
-    modele : [String],
+    nom : String,
+    description : String,
+    modele : String,
     etapes : [String],
     validation : Boolean,
-    tests : [String]
+    tests : String
 })
 
 const procedeModel = mongoose.model('procede', procedeSchema)
