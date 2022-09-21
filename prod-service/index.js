@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const { freezbeeModel,ingredientModel,procedeModel } = require('./SchemaRD')
+const { freezbeeModel,ingredientModel,procedeModel } = require('./prod-Schema')
 
 const app = express()
 const port = 27021
