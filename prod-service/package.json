@@ -1,0 +1,20 @@
+{
+  "name": "prod-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "doc": "apidoc -i . -e node_modules -o apidoc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apidoc": "^0.51.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.6",
+    "node-fetch": "^2.6.7"
+  }
+}
