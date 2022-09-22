@@ -37,6 +37,23 @@ services:
     ports:
       - "8082:8082"
 
+  mssql:
+    hostname: mssql
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Passw0rd
+    ports:
+      - "1433:1433"
+
+  auth-api:
+    hostname: auth-api
+    build: ./auth-api
+    restart: always
+    depends_on:
+      - mssql
+
   api-gateway:
     hostname: api-gateway
     image: kong:alpine
