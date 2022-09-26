@@ -1,0 +1,38 @@
+@import '../variables.scss';
+
+
+.header{
+  &__logo {
+      height: 80%;
+      display: flex;
+      object-fit: cover;
+      padding: 0;
+      margin: 0;
+      overflow:hidden;
+    
+    }
+
+  &__content {
+      display: flex;
+      background-color: $little-black;
+      height: 12%;
+      width: 100%;
+      position:fixed;
+      left: 0px;
+      top:0px;
+      z-index: 1;
+  }
+
+  &__title{
+    margin-top: auto;
+    color: $white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display:none;
+    padding-left: 5%;
+    font-size: xx-large;
+    @media screen and (min-width: $small) {  
+      display:initial
+    }
+  }
+
+}
