@@ -1,0 +1,83 @@
+@import './../../variable.scss';
+
+
+.ingredientItem{
+  border: 2px solid $brown-bread;
+  border-radius: 15px;
+  padding: 10px;
+  width: 220px;
+  height: 320px;
+  margin: 10px auto;
+  &__content{
+    grid: 1;
+    grid-row: 1;
+  }
+
+  &__imgZone{
+    height:  135px;
+    img{
+      width:  220px;
+      object-fit: cover;
+      max-height: 135px;
+    }
+  }
+
+  &__title{
+    display:flex;
+    justify-content: space-between;
+    font-weight: $fontbold;
+    height: 25px;
+  }
+
+  &__type{
+    margin-left: 15px;
+    margin-top:15px;
+    height: 35%;}
+
+  &__button{
+    display:flex;
+    font-size: 12px;
+  }
+
+  &__logoButton{
+    padding : 0 10px;
+    width: 20px;
+  }
+
+  &__edit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    a{
+      text-decoration: none;
+    }
+  }
+
+  &__editZone{
+    display: flex;
+    margin-left:auto;
+  }
+
+  &__confirmZone{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__confirm{
+    display:flex;
+    color: $green-salad;
+  }
+
+  &__cancel{
+    color:$red-meat;
+    background-color: transparent;
+    border:none;
+  }
+
+  &__buttonPatch{
+    display:flex;
+    color: $black;
+    font-size: 12px;
+  
+  }
+}

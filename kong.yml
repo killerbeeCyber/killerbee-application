@@ -1,0 +1,39 @@
+_format_version: '1.1'
+_transform: true
+
+services:
+  - host: auth-api
+    name: auth-api
+    port: 80
+    protocol: http
+    routes:
+      - paths:
+          - /api/auth
+        strip_path: true
+
+  - host: prod-service
+    name: prod-service
+    port: 27020
+    protocol: http
+    routes:
+      - paths:
+          - /api/prod
+        strip_path: true
+
+  - host : rd-service
+    name : rd-service
+    port : 27021
+    protocol : http
+    routes : 
+      - paths:
+          - /api/rd
+        strip_path: true
+
+  - host : test-service
+    name : test-service
+    port : 27022
+    protocol : http
+    routes : 
+      - paths:
+          - /api/test
+        strip_path: true
