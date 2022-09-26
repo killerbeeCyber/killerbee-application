@@ -46,7 +46,7 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 8081,
+    port: 8082,
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
