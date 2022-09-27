@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const { freezbeeModel,ingredientModel,procedeModel } = require('./prod-Schema')
 
 const app = express()
-const port = 27021
+const port = 27020
 
 app.use(express.json())
 app.use(cors())

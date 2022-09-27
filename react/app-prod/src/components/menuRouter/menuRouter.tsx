@@ -40,8 +40,13 @@ export default function MenuRouter(props: IProps) {
       location.pathname == '/register'
     ) {
       setOpenedPage('Login')
-    }
-  }, [location.pathname])
+    } else if (location.pathname == '/ingredients') {
+      setOpenedPage('Mes ingredients')
+    }else if (location.pathname == '/procedes') {
+        setOpenedPage('Mes procedes')
+    }else if (location.pathname == '/createFreezbee') {
+      setOpenedPage('Créer Freezbees')}
+    }, [location.pathname])
 
   return (
     <div className="menuRouter">
@@ -67,17 +72,68 @@ export default function MenuRouter(props: IProps) {
         <>
         <Link to="/freezbees/dish">
         <button
-            className={openedPage == 'Mes freezbees et Menus' ? 'menuButton menuButton__clicked' : 'menuButton'}
+            className={openedPage == 'Mes freezbees' ? 'menuButton menuButton__clicked' : 'menuButton'}
             onClick={() => {
               setSelectedButton(setOpenedPage)
             }}
           >
             <div className="menuButton__content">
               <img className="menuButton__logo" src={burgerSolid}></img>
-              <p>Mes freezbees et Menus</p>
+              <p>Mes freezbees</p>
             </div>
           </button>
         </Link>
+        </>
+        }
+        {isLogged &&
+        <>
+        <Link to="/ingredients">
+          <button
+              className={openedPage == 'Mes ingredients' ? 'menuButton menuButton__clicked' : 'menuButton'}
+              onClick={() => {
+                setSelectedButton(setOpenedPage)
+              }}
+            >
+              <div className="menuButton__content">
+                <img className="menuButton__logo" src={burgerSolid}></img>
+                <p>Mes ingredients</p>
+              </div>
+            </button>
+          </Link>
+        </>
+        }
+        {isLogged &&
+        <>
+        <Link to="/procedes">
+          <button
+              className={openedPage == 'Mes Procedes' ? 'menuButton menuButton__clicked' : 'menuButton'}
+              onClick={() => {
+                setSelectedButton(setOpenedPage)
+              }}
+            >
+              <div className="menuButton__content">
+                <img className="menuButton__logo" src={burgerSolid}></img>
+                <p>Mes Procedes</p>
+              </div>
+            </button>
+          </Link>
+        </>
+        }
+        {isLogged &&
+        <>
+        <Link to="/createFreezbee">
+          <button
+              className={openedPage == 'Créer Freezbees' ? 'menuButton menuButton__clicked' : 'menuButton'}
+              onClick={() => {
+                setSelectedButton(setOpenedPage)
+              }}
+            >
+              <div className="menuButton__content">
+                <img className="menuButton__logo" src={burgerSolid}></img>
+                <p>Créer un freezbee</p>
+              </div>
+            </button>
+          </Link>
         </>
         }
       </div>

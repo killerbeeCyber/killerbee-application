@@ -6,7 +6,7 @@ const freezbeeSchema = new mongoose.Schema({
     nom : String,
     description : String,
     pUHT : String,
-    gamme : Number,
+    gamme : String,
     ingredient : Array,
     grammage : Array,
 })

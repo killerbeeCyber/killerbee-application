@@ -23,7 +23,7 @@ export default function FreezbeeItem(props: IProps) {
   const dispatch = useDispatch()
 
   function deleteFreezbee() {
-    deleteFromApi(`/api/freezbee/freezbee/${freezbee._id}`).then((response) => {
+    deleteFromApi(`/api/prod/freezbee/${freezbee._id}`).then((response) => {
       if (response.ok === true) {
         dispatch(remove(freezbee))
       } else if (response.ok === false) {
@@ -43,47 +43,47 @@ export default function FreezbeeItem(props: IProps) {
         </div>
 
         {toDelete === false && (
-          <div className="menuItem__confirmZone">
-            <button className="menuItem__edit">
+          <div className="freezbeeItem__confirmZone">
+            <button className="freezbeeItem__edit">
               <Link to={'/freezbee/patch/' + freezbee._id} state={freezbee}>
-                <div className="menuItem__buttonPatch">
-                  <img className="menuItem__logoButton" src={penSolid}></img>
+                <div className="freezbeeItem__buttonPatch">
+                  <img className="freezbeeItem__logoButton" src={penSolid}></img>
                   <p> Modifier</p>
                 </div>
               </Link>
             </button>
             <button
-              className="menuItem__edit"
+              className="freezbeeItem__edit"
               onClick={() => setToDelete(true)}
             >
-              <div className="menuItem__button">
-                <img className="menuItem__logoButton" src={trashSolid}></img>
+              <div className="freezbeeItem__button">
+                <img className="freezbeeItem__logoButton" src={trashSolid}></img>
                 <p> Supprimer</p>
               </div>
             </button>
           </div>
         )}
         {toDelete && toDelete === true && (
-          <div className="menuItem__confirmZone">
+          <div className="freezbeeItem__confirmZone">
             <button
-              className="menuItem__edit menuItem__editConfirm"
+              className="freezbeeItem__edit menuItem__editConfirm"
               onClick={() => deleteFreezbee()}
             >
-              <div className="menuItem__confirm">
+              <div className="freezbeeItem__confirm">
                 <img
-                  className="menuItem__logoButton"
+                  className="freezbeeItem__logoButton"
                   src={circleCheckSolid}
                 ></img>
                 <p> Confirmer </p>
               </div>
             </button>
             <button
-              className="menuItem__cancel"
+              className="freezbeeItem__cancel"
               onClick={() => setToDelete(false)}
             >
-              <div className="menuItem__button">
+              <div className="freezbeeItem__button">
                 <img
-                  className="menuItem__logoButton"
+                  className="freezbeeItem__logoButton"
                   src={circleXmarkSolid}
                 ></img>
                 <p> Annuler </p>

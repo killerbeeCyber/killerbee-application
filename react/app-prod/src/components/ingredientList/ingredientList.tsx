@@ -27,7 +27,7 @@ export default function IngredientList(props: IProps) {
     setIsLoading(true)
 
     getFromApi(
-      `/api/ingredient/ingredient?restaurateur=${tokenPayload.ownedRestaurants}`
+      `/api/prod/ingredient`
     )
       .then((response) => response.json())
       .then((response) => {
