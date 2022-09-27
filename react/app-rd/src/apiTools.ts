@@ -5,7 +5,7 @@ function getToken() {
 }
 
 function getFromApi(uri: string) {
-  return fetch(`http://localhost:8000${uri}`, {
+  return fetch(`http://10.100.2.1:8000${uri}`, {
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
@@ -13,7 +13,7 @@ function getFromApi(uri: string) {
 }
 
 function postToApi(uri: string, body: any) {
-  return fetch(`http://localhost:8000${uri}`, {
+  return fetch(`http://10.100.2.1:8000${uri}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function postToApi(uri: string, body: any) {
 }
 
 function patchToApi(uri: string, body: any) {
-  return fetch(`http://localhost:8000${uri}`, {
+  return fetch(`http://10.100.2.1:8000${uri}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ function patchToApi(uri: string, body: any) {
 }
 
 function putToApi(uri: string, body: any) {
-  return fetch(`http://localhost:8000${uri}`, {
+  return fetch(`http://10.100.2.1:8000${uri}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ function putToApi(uri: string, body: any) {
 }
 
 function deleteFromApi(uri: string) {
-  return fetch(`http://localhost:8000${uri}`, {
+  return fetch(`http://10.100.2.1:8000${uri}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${getToken()}`,
