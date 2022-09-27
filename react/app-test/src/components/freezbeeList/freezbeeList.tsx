@@ -27,7 +27,7 @@ export default function FreezbeeList(props: IProps) {
     setIsLoading(true)
 
     getFromApi(
-      `/api/freezbee/freezbee?restaurateur=${tokenPayload.ownedRestaurants}`
+      `/api/test/freezbee`
     )
       .then((response) => response.json())
       .then((response) => {
