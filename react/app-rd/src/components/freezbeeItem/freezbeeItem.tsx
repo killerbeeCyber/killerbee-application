@@ -23,7 +23,7 @@ export default function FreezbeeItem(props: IProps) {
   const dispatch = useDispatch()
 
   function deleteFreezbee() {
-    deleteFromApi(`/api/freezbee/freezbee/${freezbee._id}`).then((response) => {
+    deleteFromApi(`/api/rd/freezbee/${freezbee._id}`).then((response) => {
       if (response.ok === true) {
         dispatch(remove(freezbee))
       } else if (response.ok === false) {

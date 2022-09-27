@@ -40,7 +40,12 @@ export default function MenuRouter(props: IProps) {
       location.pathname == '/register'
     ) {
       setOpenedPage('Login')
-    }
+    } else if (location.pathname == '/ingredients') {
+      setOpenedPage('Mes ingredients')
+    }else if (location.pathname == '/procedes') {
+        setOpenedPage('Mes procedes')
+    }else if (location.pathname == '/createFreezbee') {
+      setOpenedPage('Créer Ingredient')}
   }, [location.pathname])
 
   return (
@@ -74,10 +79,61 @@ export default function MenuRouter(props: IProps) {
           >
             <div className="menuButton__content">
               <img className="menuButton__logo" src={burgerSolid}></img>
-              <p>Mes freezbees et Menus</p>
+              <p>Mes freezbees</p>
             </div>
           </button>
         </Link>
+        </>
+        }
+                {isLogged &&
+        <>
+        <Link to="/ingredients">
+          <button
+              className={openedPage == 'Mes ingredients' ? 'menuButton menuButton__clicked' : 'menuButton'}
+              onClick={() => {
+                setSelectedButton(setOpenedPage)
+              }}
+            >
+              <div className="menuButton__content">
+                <img className="menuButton__logo" src={burgerSolid}></img>
+                <p>Mes ingredients</p>
+              </div>
+            </button>
+          </Link>
+        </>
+        }
+        {isLogged &&
+        <>
+        <Link to="/procedes">
+          <button
+              className={openedPage == 'Mes Procedes' ? 'menuButton menuButton__clicked' : 'menuButton'}
+              onClick={() => {
+                setSelectedButton(setOpenedPage)
+              }}
+            >
+              <div className="menuButton__content">
+                <img className="menuButton__logo" src={burgerSolid}></img>
+                <p>Mes Procedes</p>
+              </div>
+            </button>
+          </Link>
+        </>
+        }
+        {isLogged &&
+        <>
+        <Link to="/createIngredient">
+          <button
+              className={openedPage == 'Créer Ingredient' ? 'menuButton menuButton__clicked' : 'menuButton'}
+              onClick={() => {
+                setSelectedButton(setOpenedPage)
+              }}
+            >
+              <div className="menuButton__content">
+                <img className="menuButton__logo" src={burgerSolid}></img>
+                <p>Créer un Ingredient</p>
+              </div>
+            </button>
+          </Link>
         </>
         }
       </div>

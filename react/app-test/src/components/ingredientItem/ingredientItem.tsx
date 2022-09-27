@@ -23,7 +23,7 @@ export default function IngredientItem(props: IProps) {
   const dispatch = useDispatch()
 
   function deleteIngredient() {
-    deleteFromApi(`/api/ingredient/ingredient/${ingredient._id}`).then((response) => {
+    deleteFromApi(`/api/test/ingredient/${ingredient._id}`).then((response) => {
       if (response.ok === true) {
         dispatch(remove(ingredient))
       } else if (response.ok === false) {

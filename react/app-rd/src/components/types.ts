@@ -12,8 +12,8 @@ export interface IFreezbees {
 
 export interface IIngredients {
     _id: string,
-    nom : String,
-    description : String,
+    nom : string,
+    description : string,
     img: string
 }
 

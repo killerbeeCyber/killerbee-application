@@ -1,0 +1,95 @@
+@import './../../variable.scss';
+
+
+.createIngredient{
+  &__content {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+  }
+
+  &__form{
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__pwRequirement{
+    width: 80%;
+    @media screen and (min-width: $xlarge) {  
+      width: 40%;
+    }
+    margin:0;
+    font-size: 12px;
+    color: $little-black;
+  }
+  
+  &__errorZone {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    opacity: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:7%;
+  }
+  
+  &__formField::placeholder {
+    color: $little-black;
+  }
+  
+  &__formField {
+    border: none;
+    border-bottom: 1px solid $little-black;
+    border-radius: 3px;
+    margin: 15px 0;
+    width: 80%;
+    @media screen and (min-width: $xlarge) {  
+      width: 40%;
+    }
+  }
+  
+  &__formSubmit {
+    width: 50%;
+    @media screen and (min-width: $xlarge) {  
+      width: 40%;
+    }
+    button{
+      background-color: $yellow-cheese;
+      color: $black;
+    }
+  }
+  &__inputZone{
+    width: 80%;
+    @media screen and (min-width: $xlarge) {  
+      width: 40%;
+    }
+  }
+
+  &__input{
+    display: flex;    
+    input[type=checkbox] {
+      border-radius: 4px;
+      height: 20px;
+      width: 20px;
+      background: $white;
+      border: 2px solid #ccc;
+    }
+  }
+}
+
+.errorVisible{
+  width: 80%;
+  @media screen and (min-width: $xlarge) {  
+    width: 40%;
+  }
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: $fontbold;
+  color: $red-meat;
+  border: 2px solid $red-meat;
+  opacity: 1;
+  border-radius: 5px;
+}
