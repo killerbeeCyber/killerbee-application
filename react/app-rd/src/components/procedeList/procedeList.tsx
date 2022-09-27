@@ -27,7 +27,7 @@ export default function ProcedeList(props: IProps) {
     setIsLoading(true)
 
     getFromApi(
-      `/api/procede/procede?restaurateur=${tokenPayload.ownedRestaurants}`
+      `/api/rd/procede`
     )
       .then((response) => response.json())
       .then((response) => {

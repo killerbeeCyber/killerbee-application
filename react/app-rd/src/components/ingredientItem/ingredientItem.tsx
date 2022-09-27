@@ -23,7 +23,7 @@ export default function IngredientItem(props: IProps) {
   const dispatch = useDispatch()
 
   function deleteIngredient() {
-    deleteFromApi(`/api/ingredient/ingredient/${ingredient._id}`).then((response) => {
+    deleteFromApi(`/api/rd/ingredient/${ingredient._id}`).then((response) => {
       if (response.ok === true) {
         dispatch(remove(ingredient))
       } else if (response.ok === false) {
@@ -39,53 +39,52 @@ export default function IngredientItem(props: IProps) {
       <>
         <div className="ingredientItem__title">
           <p>{ingredient.nom}</p>
-          <p>{ingredient.description}</p>
         </div>
 
-        <div className="ingredientItem__type">{ingredient.type}</div>
+        <div className="ingredientItem__type">{ingredient.description}</div>
 
         {toDelete === false && (
-          <div className="menuItem__confirmZone">
-            <button className="menuItem__edit">
+          <div className="ingredientItem__confirmZone">
+            <button className="ingredientItem__edit">
               <Link to={'/ingredient/patch/' + ingredient._id} state={ingredient}>
-                <div className="menuItem__buttonPatch">
-                  <img className="menuItem__logoButton" src={penSolid}></img>
+                <div className="ingredientItem__buttonPatch">
+                  <img className="ingredientItem__logoButton" src={penSolid}></img>
                   <p> Modifier</p>
                 </div>
               </Link>
             </button>
             <button
-              className="menuItem__edit"
+              className="ingredientItem__edit"
               onClick={() => setToDelete(true)}
             >
-              <div className="menuItem__button">
-                <img className="menuItem__logoButton" src={trashSolid}></img>
+              <div className="ingredientItem__button">
+                <img className="ingredientItem__logoButton" src={trashSolid}></img>
                 <p> Supprimer</p>
               </div>
             </button>
           </div>
         )}
         {toDelete && toDelete === true && (
-          <div className="menuItem__confirmZone">
+          <div className="ingredientItem__confirmZone">
             <button
-              className="menuItem__edit menuItem__editConfirm"
+              className="ingredientItem__edit ingredientItem__editConfirm"
               onClick={() => deleteIngredient()}
             >
-              <div className="menuItem__confirm">
+              <div className="ingredientItem__confirm">
                 <img
-                  className="menuItem__logoButton"
+                  className="ingredientItem__logoButton"
                   src={circleCheckSolid}
                 ></img>
                 <p> Confirmer </p>
               </div>
             </button>
             <button
-              className="menuItem__cancel"
+              className="ingredientItem__cancel"
               onClick={() => setToDelete(false)}
             >
-              <div className="menuItem__button">
+              <div className="ingredientItem__button">
                 <img
-                  className="menuItem__logoButton"
+                  className="ingredientItem__logoButton"
                   src={circleXmarkSolid}
                 ></img>
                 <p> Annuler </p>
