@@ -23,7 +23,7 @@ export default function ProcedeItem(props: IProps) {
   const dispatch = useDispatch()
 
   function deleteProcede() {
-    deleteFromApi(`/api/procede/procede/${procede._id}`).then((response) => {
+    deleteFromApi(`/api/rd/procede/${procede._id}`).then((response) => {
       if (response.ok === true) {
         dispatch(remove(procede))
       } else if (response.ok === false) {

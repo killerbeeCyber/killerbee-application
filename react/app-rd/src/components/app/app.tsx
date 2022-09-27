@@ -9,6 +9,10 @@ import LoginPage from '../loginPage/loginPage'
 import FreezbeeList from '../freezbeeList/freezbeeList'
 import MenuRouter from '../menuRouter/menuRouter'
 import CreateAccountPage from '../createAccountPage/createAccountPage'
+import IngredientList from '../ingredientList/ingredientList'
+import ProcedeList from '../procedeList/procedeList'
+import CreateIngredient from '../createIngredient/createIngredient'
+import PatchIngredient from '../patchIngredient/patchIngredient'
 
 export default function App() {
   return (
@@ -27,6 +31,10 @@ export default function App() {
             <Route path="register" element={<CreateAccountPage />} />
 
             <Route path="freezbees/dish" element={<FreezbeeList />} />
+            <Route path="ingredients" element={<IngredientList />} />
+            <Route path="procedes" element={<ProcedeList />} />
+            <Route path="createIngredient" element={<CreateIngredient />} />
+            <Route path="ingredient/patch/:id" element={<PatchIngredient/>}/>
 
           </Route>
         </Routes>
