@@ -12,18 +12,18 @@ export interface IFreezbees {
 
 export interface IIngredients {
     _id: string,
-    nom : String,
-    description : String,
+    nom : string,
+    description : string,
     img: string
 }
 
 export interface IProcedes {
     _id: string,
-    nom : String,
-    description : String,
-    modele : String,
-    etapes : Array<String>,
-    validation : Boolean,
-    tests : String,
+    nom : string,
+    description : string,
+    modele : string,
+    etapes : Array<string>,
+    validation : string,
+    tests : string,
     img: string
 }

@@ -21,7 +21,7 @@ const procedeSchema = new mongoose.Schema({
     description : String,
     modele : String,
     etapes : [String],
-    validation : Boolean,
+    validation : String,
     tests : String
 })
 
