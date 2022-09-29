@@ -3,37 +3,37 @@ version: '3.9'
 services:
   react-app-prod:
     hostname: react-app-prod
-    build: ./react/app-prod
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/react/app-prod
     restart: always
     depends_on:
       - api-gateway
     volumes:
-      - ./react/app-prod/src:/app/src
-      - ./react/app-prod/img:/app/img
+      - ./app-prod/src:/app/src
+      - ./app-prod/img:/app/img
     ports:
       - "8080:8080"
 
   react-app-rd:
     hostname: react-app-rd
-    build: ./react/app-rd
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/react/app-rd
     restart: always
     depends_on:
       - api-gateway
     volumes:
-      - ./react/app-rd/src:/app/src
-      - ./react/app-rd/img:/app/img
+      - ./app-rd/src:/app/src
+      - ./app-rd/img:/app/img
     ports:
       - "8081:8081"
 
   react-app-test:
     hostname: react-app-test
-    build: ./react/app-test
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/react/app-test
     restart: always
     depends_on:
       - api-gateway
     volumes:
-      - ./react/app-test/src:/app/src
-      - ./react/app-test/img:/app/img
+      - ./app-test/src:/app/src
+      - ./app-test/img:/app/img
     ports:
       - "8082:8082"
 
@@ -49,7 +49,7 @@ services:
 
   auth-api:
     hostname: auth-api
-    build: ./auth-api
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/Auth-api
     restart: always
     depends_on:
       - mssql
@@ -72,20 +72,20 @@ services:
 
   prod-service:
     hostname: prod-service
-    build: ./prod-service
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/prod-service
     restart: always
     depends_on:
       - mongodb
 
   rd-service:
     hostname: rd-service
-    build: ./rd-service
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/rd-service
     depends_on:
       - mongodb
 
   test-service:
     hostname: test-service
-    build: ./test-service
+    build: https://github.com/killerbeeCyber/killerbee-application/tree/main/test-service
     depends_on:
       - mongodb
 
